@@ -1,4 +1,4 @@
-
+  <div class="title">Influencers vaqueros gestionados por mí</div>
 
 <div class="card" id="card-1">
   
@@ -19,7 +19,7 @@
 			<div class="card-content right-content">
 				<h3>Hermosillo, Sonora</h3>
 				<p>Cortesía de 3 camisas y dos pantalones por mes</p>
-				<p>$2500 pesos mensuales + $2000 de bono llegando a más de 10,000 likes. Código personalizado en la página y +5% de comisión por vent </p>
+				<p>$2500 pesos mensuales + $2000 de bono llegando a más de 10,000 likes. Código personalizado en la página y +5% de comisión por venta. </p>
 				
 			</div>
 			<div class="card-footer">
@@ -163,6 +163,26 @@ body::after {
 	background: radial-gradient(ellipse, #00000000, #000000cc);
 	z-index: -1;
 }
+  
+  @media (max-width: 720px) {
+  body {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 20px;
+    color: #f0f0f0;
+    /* background-image: linear-gradient(43deg, #222e68 0%, #021d42 100%); */
+    background: #101522;
+    background-blend-mode: hard-light;
+    background-image: radial-gradient(circle at 20% 20%, #ffcc7066 10%, #ffcc7000 50%), radial-gradient(circle at 80% 80%, #0033ff66 10%, #0033ff00 50%), radial-gradient(ellipse at 35% 70%, #00ff4866 10%, #00ff4800 50%), radial-gradient(ellipse at 70% 35%, #ff005d66 10%, #ff005d00 60%);
+    background-size: 250% 250%;
+    animation: background-animation 30s infinite;
+}}
+  
+  
+  
 .card {
 	position: relative;
 	width: 18vw;
@@ -172,6 +192,19 @@ body::after {
 	overflow: hidden;
 	background-color: #000000;
 }
+  
+    @media (max-width: 720px) {
+  .card {
+	position: relative;
+	width: 45vw;
+	height: 42vh;
+	outline: 2px solid #ffffff66;
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: #000000;
+}}
+  
+  
 
 /*checkbox*/
 input[type="checkbox"] {
@@ -209,6 +242,22 @@ label.card-toggle-label::before {
 	background-color: #f0f0f099;
 	transition: all 0.5s ease-in-out;
 }
+  
+         @media (max-width: 720px) {
+  label.card-toggle-label::after, label.card-toggle-label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 20px;
+    height: 6px;
+    transform: translate(-40%, calc(-50% - 0px)) rotate(40deg);
+    border-radius: 3px;
+    background-color: #f0f0f099;
+    transition: all 0.5s ease-in-out;
+}}
+  
 label.card-toggle-label::after {
 	transform: translate(-40%, calc(-50% + 8px)) rotate(-40deg);
 }
@@ -223,6 +272,28 @@ label.card-toggle-label:hover::before {
 label.card-toggle-label:hover::after {
 	transform: translate(-40%, calc(-50% + 5px)) rotate(-23deg);
 }
+  
+  
+       @media (max-width: 720px) {
+  label.card-toggle-label {
+    display: block;
+    position: absolute;
+    z-index: 99;
+    width: 40px;
+    height: 40px;
+    top: 35%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid #ffffff66;
+    background: #00000033;
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}}
+  
+  
+  
 
 /*label right-side*/
 .card-toggle:checked ~ label.card-toggle-label {
@@ -244,6 +315,16 @@ label.card-toggle-label:hover::after {
 	transform: translate(-60%, calc(-50% + 5px)) rotate(23deg);
 }
 
+
+  
+  
+          @media (max-width: 720px) {
+  .card-toggle:checked ~ label.card-toggle-label::before {
+    transform: translate(-60%, calc(-50% - 0px)) rotate(-40deg);
+}
+         
+  }
+  
 /*background left-side*/
 .card-image {
 	width: 100%;
@@ -305,20 +386,57 @@ label.card-toggle-label:hover + .card-image {
 .card-header h2 {
 	color: #f0f0f0f0;
 	font-weight: 700;
-	line-height: 4vmin;
-	font-size: 3vmin;
+	line-height: 0.8em;
+	font-size: 1.5em;
 	text-align: center;
 }
+  
+      @media (max-width: 720px) { 
+/*card header*/
+.card-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 45px;
+	background: #00000099;
+	border-bottom: 1px solid #ffffff66;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(4px);
+	opacity: 1;
+	transition: all 0.5s ease-in-out;
+} 
+        
+        .card-header h2 {
+	color: #f0f0f0f0;
+	font-weight: 700;
+	line-height: 1.2rem;
+	font-size: 1rem;
+	text-align: center;
+}
+  }  
 
 /*card content*/
 .card-content {
 	position: absolute;
 	width: 25vw;
-	height: 60vh;
+	height: 40vh;
 	top: 100px;
 	padding: 1em;
 	transition: all 0.25s ease-in-out;
 }
+       @media (max-width: 720px) {
+  /*card content*/
+.card-content {
+	position: absolute;
+	width: 25vw;
+	height: 27vh;
+	top: 40px;
+	padding: 1em;
+	transition: all 0.25s ease-in-out;
+}}
 
 .card-content a {
 	display: inline-block;
@@ -340,15 +458,29 @@ label.card-toggle-label:hover + .card-image {
 	background-color: #ffcc7033;
 }
 .card-content h3 {
-	font-size: 3vmin;
+	font-size: 1rem;
 	font-weight: 700;
 
 	margin-bottom: 1.15rem;
 }
 .card-content p {
-font-size: 1.8vmin;
+font-size: 0.6rem;
 	margin-bottom: 1.15rem;
 }
+  
+       @media (max-width: 720px) {
+  .card-content h3 {
+	font-size: 1rem;
+	font-weight: 700;
+
+	margin-bottom: 1.15rem;
+}
+.card-content p {
+font-size: 0.5rem;
+	margin-bottom: 1.15rem;
+}}
+  
+  
 .card-content.left-content h3,
 .card-content.left-content p {
 	margin-right: 30%;
@@ -357,6 +489,19 @@ font-size: 1.8vmin;
 .card-content.right-content p {
 	margin-left: 30%;
 }
+  
+       @media (max-width: 720px) {
+  .card-content.left-content h3, .card-content.left-content p {
+    margin-right: -100%;
+}
+         
+         .card-content.right-content h3,
+.card-content.right-content p {
+	margin-left: -100%;
+}}
+
+
+  
 /*card-content left-side*/
 .card-content.left-content {
 	opacity: 1;
@@ -384,6 +529,14 @@ font-size: 1.8vmin;
 	left: -7vw;
 	transition-delay: 0.25s;
 }
+  
+       @media (max-width: 720px) {
+  .card-toggle:checked ~ .card-content.right-content {
+	opacity: 1;
+	left: 20vw;
+	transition-delay: 0.25s;
+}}
+  
 
 /*card footer*/
 .card-footer {
@@ -490,6 +643,21 @@ input.open-card:checked + label.open-card-label::before {
 	border-top-left-radius: 50%;
 	border-bottom-right-radius: 50%;
 }
+  
+      @media (max-width: 720px) {
+  input.open-card:checked + label.open-card-label::before {
+	content: "VER";
+	width: 10vw;
+	height: auto;
+	text-align: center;
+	line-height: 10vw;
+	overflow: hidden;
+	transition-delay: 0;
+	border-top-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+}}
+  
+  
 input.open-card:checked ~ label.open-card-label:hover::before {
 	width: 100px;
 	height: 100px;
@@ -544,5 +712,17 @@ input.open-card:checked ~ .card-footer {
       font-size: 40px;
       font-weight: bold;
     }  
+  
+       @media (max-width: 720px) {
+    .title {
+      position: absolute;
+      top: 48vh;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+    }  }
+  
   
 <style>
