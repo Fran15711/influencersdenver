@@ -476,7 +476,7 @@ font-size: 0.6rem;
 	margin-bottom: 1.15rem;
 }
 .card-content p {
-font-size: 0.5rem;
+font-size: 0.8rem;
 	margin-bottom: 1.15rem;
 }}
   
@@ -619,9 +619,31 @@ label.open-card-label::before {
 	border-bottom-right-radius: 0%;
 }
 
+  label.open-card-label::before {
+	content: "X";
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1002;
+	border-radius: 50%;
+	border: 1px solid #ffffff33;
+	background: #00000066;
+	backdrop-filter: blur(4px);
+	transition: all 0.25s ease-in-out;
+	cursor: pointer;
+	border-top-left-radius: 0%;
+	border-bottom-right-radius: 0%;
+}
+    @media (max-width: 1000px) {
 label.open-card-label::after {
 	content: "";
-	display: block;
+	display: none;
 	position: absolute;
 	width: 0px;
 	height: 0px;
@@ -634,7 +656,7 @@ label.open-card-label::after {
 	backdrop-filter: blur(4px);
 	transition: all 0.5s ease-in-out;
 	pointer-events: none;
-}
+}}
 
 label.open-card-label:hover::after {
 	width: 1250px;
